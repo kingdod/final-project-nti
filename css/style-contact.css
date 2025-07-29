@@ -1,0 +1,210 @@
+a {
+  text-decoration: none;
+}
+
+a:hover,
+i:hover {
+  cursor: pointer;
+  color: rgba(222, 16, 16, 1) !important;
+}
+#test{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 999;
+}
+.search{
+    top: 6%;
+    right: 28%;
+    z-index: 999;
+}
+
+#up{
+    z-index: 1000;
+}
+.color-gray {
+  color: #ebebeb !important;
+}
+.bg-gray {
+  background-color: #ebebeb !important;
+}
+
+.form-container {
+  margin: 50px auto;
+  padding: 30px;
+
+  border-radius: 8px;
+}
+.form-control {
+  background-color: #fff;
+  border: 1px solid #e9ecef;
+  padding: 1rem 1rem;
+}
+.form-control:focus {
+  border-color: #000;
+}
+
+.white-placeholder::placeholder {
+  color: #777;
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.store-card .store-img {
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center center; 
+}
+
+.store-card:hover .store-img {
+    transform: scale(1.05) skewX(-1deg); 
+}
+
+
+.store-card {
+    transition: box-shadow 0.3s ease-in-out; 
+}
+
+.store-card:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Custom CSS for Offcanvas Sub-menus */
+
+.offcanvas-body {
+    position: relative; /* Essential for absolute positioning of sub-menus */
+    overflow-y: auto; /* Allow scrolling within the offcanvas body if content overflows */
+    display: flex; /* Use flexbox to lay out main categories and sub-menus side-by-side */
+    flex-wrap: nowrap; /* Prevent wrapping of main categories and sub-menus */
+}
+
+/* Base styles for all sub-menus */
+.category-submenu {
+    position: absolute; /* Position sub-menus relative to .offcanvas-body */
+    top: 0;
+    right: 0;
+    width: 0; /* Initially hidden by setting width to 0 */
+    height: 100%; /* Take full height of .offcanvas-body */
+    background-color: #fff; /* White background for the sub-menu panel */
+    box-shadow: -3px 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow on the left edge */
+    transition: width 0.3s ease-in-out, padding 0.3s ease-in-out; /* Animate width and padding for smooth appearance */
+    overflow: hidden; /* Hide content that overflows when width is 0 */
+    z-index: 10; /* Ensure sub-menu appears above the main category list */
+    padding: 0; /* No padding when hidden */
+    display: flex; /* Use flexbox for internal layout (columns, banner) */
+    flex-direction: column; /* Stack children vertically */
+     overflow-y: auto;
+}
+
+/* Class added by JavaScript to show the active sub-menu */
+.category-submenu.show {
+    width: 65%; /* Set visible width (e.g., 65% of .offcanvas-body width) */
+    padding: 1rem; /* Add padding when visible */
+    overflow-y: auto; /* Allow scrolling within the sub-menu if its content overflows */
+}
+
+/* Styling for sub-menu titles (e.g., WOMEN, MEN, PHONES) */
+.category-submenu .submenu-title {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+    padding-left: 0.5rem; /* Indent titles slightly */
+}
+
+/* Styling for sub-menu links */
+.category-submenu .submenu-link {
+    display: block;
+    padding: 0.3rem 0.5rem;
+    color: #666;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s ease, background-color 0.2s ease;
+     overflow-y: auto;
+}
+
+.category-submenu .submenu-link:hover {
+    color: #000; /* Darker text on hover */
+    background-color: #f8f9fa; /* Light background on hover */
+}
+
+/* Styling for the banner image within the sub-menu */
+.category-submenu .submenu-banner-container {
+    flex-shrink: 0; /* Prevent the banner from shrinking */
+    margin-top: auto; /* Pushes the banner to the bottom of the submenu */
+    position: relative; /* Needed for text overlay positioning */
+}
+
+.category-submenu .submenu-banner-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: .3rem; /* Inherit or explicitly set rounded corners for the banner image */
+}
+
+.category-submenu .submenu-banner-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay for text */
+    border-radius: inherit; /* Inherit border-radius from image */
+}
+
+.category-submenu .submenu-banner-text h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.category-submenu .submenu-banner-text p {
+    font-size: 0.8rem;
+}
+
+.category-submenu .submenu-banner-text .btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+}
+
+/* Adjust the main category list's width when a submenu is active */
+.offcanvas-body .list-group {
+    width: 100%; /* Default width when no submenu is active */
+    transition: width 0.3s ease-in-out; /* Animate width changes */
+    flex-shrink: 0; /* Prevent the list from shrinking initially */
+}
+
+.offcanvas-body.show-submenu-active .list-group {
+    width: 35%; /* Shrink main list to 35% when a submenu takes 65% */
+}
+
+/* Ensure the main categories are clickable and styled correctly */
+.offcanvas-body > .list-group {
+    z-index: 5; /* Ensure main list is below submenu but above other base elements */
+    background-color: #fff; /* Ensure it has a background so text is readable */
+}
